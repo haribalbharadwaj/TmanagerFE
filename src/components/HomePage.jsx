@@ -395,6 +395,11 @@ function App() {
     setIsLoggedIn(false);
     setTasks({ todo: [], inProgress: [], done: [] });
     setSuccess('Logged out successfully.');
+    setEmail('');
+    setPassword('');
+    setFirstName('');
+    setLastName('');
+    setConfirmPassword('');
   };
 
 
