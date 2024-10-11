@@ -1,0 +1,462 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    background-color: #f5f5f5;
+    font-size: 16px;
+  }
+  
+  /* Navbar */
+  #navbar {
+    background-color:#4A90E2;
+    color: #4A90E2;
+    padding: 15px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+  }
+
+
+  #navbar h1{
+    color: #FFFFFF;
+  }
+  
+  #navbar img{
+    width: 50px;
+    height: auto;
+  }
+  #navbar button {
+    background-color: white;
+    color: #4A90E2;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  #navbar button:hover {
+    background-color: #7EA6FF;
+    color: white;
+  }
+  
+  /* Modal Overlay */
+  #overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    top:30%;
+    left:40%;
+    position: absolute;
+    z-index: 2000;
+  }
+  
+  .modal-content  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #4A90E2;
+  }
+  
+  .modal-content  input,
+  .modal-content  textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .modal-content  button {
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .modal-content  button:hover {
+    background-color: #357ABD;
+  }
+
+  .modal-content img {
+    width:30px;
+    height: auto;
+    left: 95%;
+    top:5%;
+    position: relative;
+
+  }
+  
+  /* Task Board */
+  .task-board {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .task-column {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .task-column h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #4A90E2;
+  }
+  
+  .task {
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+  }
+  
+  .task:hover {
+    transform: scale(1.03);
+  }
+  
+  .task h4 {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .task p {
+    color: #666;
+    font-size: 14px;
+  }
+  
+  .task-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .task-buttons button {
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+  }
+  
+  .task-buttons button:hover {
+    background-color: #357ABD;
+  }
+  
+  /* View, Edit and Delete Buttons */
+  .task-buttons button.view {
+    background-color: #5BC236;
+  }
+  
+  .task-buttons button.view:hover {
+    background-color: #489F2A;
+  }
+  
+  .task-buttons button.edit {
+    background-color: #FFA500;
+  }
+  
+  .task-buttons button.edit:hover {
+    background-color: #E59400;
+  }
+  
+  .task-buttons button.delete {
+    background-color: #FF5C5C;
+  }
+  
+  .task-buttons button.delete:hover {
+    background-color: #D94343;
+  }
+  
+  /* Delete Confirmation Modal */
+  .delete-modal {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .delete-modal p {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .delete-modal button {
+    background-color: #FF5C5C;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+  }
+  
+  .delete-modal button.cancel {
+    background-color: #ccc;
+  }
+  
+  .delete-modal button:hover {
+    opacity: 0.9;
+  }
+  
+  /* Login/Signup Forms */
+  .auth-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .auth-form h2 {
+    color: #4A90E2;
+    margin-bottom: 20px;
+  }
+  
+  .auth-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .auth-form button {
+    background-color: #4A90E2;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .auth-form button:hover {
+    background-color: #357ABD;
+  }
+  
+  /* Success/Error Messages */
+  .success-message,
+  .error-message {
+    text-align: center;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .success-message {
+    background-color: #DFF2BF;
+    color: #4F8A10;
+  }
+  
+  .error-message {
+    background-color: #FFD2D2;
+    color: #D8000C;
+  }
+  
+
+  
+  /* Add Task Modal */
+  .add-task-modal {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 400px;
+    max-width: 90%;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    z-index: 200; /* Higher z-index for add task modal */
+  }
+  
+  /* View Task Modal */
+  .view-task-modal {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 500px;
+    max-width: 90%;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    z-index: 200; /* Higher z-index for view task modal */
+    left: 35%;
+    top:50%;
+    position: absolute;
+  }
+  
+  /* Delete Confirmation Modal */
+  .delete-confirmation-modal {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    max-width: 90%;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 200; /* Higher z-index for delete confirmation modal */
+    top:30%;
+    left:35%;
+  }
+
+  .edit-task {
+    background-color: #f9f9f9; /* Light background color for the form */
+    border: 1px solid #ccc; /* Light border for separation */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Space inside the container */
+    margin: 20px; /* Space around the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    top:30%;
+    left:35%;
+    position: absolute;
+
+}
+
+.edit-task h3 {
+    margin-bottom: 15px; /* Space below the heading */
+    color: #333; /* Darker color for the heading */
+}
+
+.edit-task label {
+    display: block; /* Stack the labels vertically */
+    margin-bottom: 10px; /* Space below each label */
+    font-weight: bold; /* Bold text for labels */
+}
+
+.edit-task input[type="text"],
+.edit-task textarea {
+    width: 100%; /* Full width for inputs */
+    padding: 10px; /* Space inside the inputs */
+    border: 1px solid #ccc; /* Border for inputs */
+    border-radius: 4px; /* Slightly rounded corners */
+    font-size: 16px; /* Font size for inputs */
+    resize: vertical; /* Allow vertical resizing for textarea */
+}
+
+.edit-task button {
+    background-color: #007bff; /* Primary button color */
+    color: white; /* Text color */
+    padding: 10px 15px; /* Padding inside the button */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size for the button */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.edit-task button:hover {
+    background-color: hsl(145, 92%, 19%); /* Darker color on hover */
+}
+
+.delete-confirmation {
+    background-color: #fff; /* White background for the confirmation dialog */
+    border: 1px solid #ccc; /* Light border for separation */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Space inside the container */
+    margin: 20px; /* Space around the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    text-align: center; /* Center text inside the dialog */
+    top:40%;
+    left:35%;
+    position: absolute;
+}
+
+.delete-confirmation p {
+    margin-bottom: 15px; /* Space below the message */
+    font-size: 18px; /* Font size for the message */
+}
+
+.delete-confirmation button {
+    background-color: #ff4d4d; /* Red color for confirm button */
+    color: white; /* White text */
+    padding: 10px 15px; /* Padding inside the button */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size for the button */
+    margin: 0 5px; /* Space between buttons */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.delete-confirmation button:hover {
+    background-color: #e60000; /* Darker red on hover */
+}
+
+/* Styles for Task Details Modal */
+.task-details-modal {
+    background-color: #fff; /* White background for the modal */
+    border: 1px solid #ccc; /* Light border for separation */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Space inside the container */
+    margin: 20px; /* Space around the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    max-width: 400px; /* Limit the width of the modal */
+    text-align: left; /* Left align text */
+    left:35%;
+    top:40%;
+    position: absolute;
+}
+
+.task-details-modal h3 {
+    margin-bottom: 15px; /* Space below the heading */
+    color: #333; /* Dark color for the heading */
+}
+
+.task-details-modal p {
+    margin: 5px 0; /* Space above and below each paragraph */
+    font-size: 16px; /* Font size for details */
+}
+
+.task-details-modal button {
+    background-color: #007bff; /* Primary button color */
+    color: white; /* Text color */
+    padding: 10px 15px; /* Padding inside the button */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size for the button */
+    margin-top: 15px; /* Space above the button */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.task-details-modal button:hover {
+    background-color: #0056b3; /* Darker color on hover */
+}
+
